@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, FileText } from "lucide-react";
+import { Mail, Linkedin, FileText, Star } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function AboutPage() {
@@ -31,7 +31,150 @@ export function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Star Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Top Section Stars */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="absolute top-24 left-[8%]"
+        >
+          <Star className="w-6 h-6 fill-white/60 text-white/60 rotate-12 drop-shadow-md" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="absolute top-32 right-[12%]"
+        >
+          <Star className="w-7 h-7 fill-moonstone-blue/50 text-moonstone-blue/50 -rotate-25 drop-shadow-lg" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="absolute top-[20vh] left-[15%]"
+        >
+          <Star className="w-5 h-5 fill-white/50 text-white/50 rotate-45 drop-shadow-sm" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+          className="absolute top-[25vh] right-[20%]"
+        >
+          <Star className="w-6 h-6 fill-moonstone-blue/55 text-moonstone-blue/55 -rotate-30 drop-shadow-md" />
+        </motion.div>
+
+        {/* Middle Section Stars */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute top-[45vh] left-[5%]"
+        >
+          <Star className="w-7 h-7 fill-white/60 text-white/60 rotate-20 drop-shadow-lg" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="absolute top-[50vh] right-[8%]"
+        >
+          <Star className="w-6 h-6 fill-moonstone-blue/50 text-moonstone-blue/50 -rotate-15 drop-shadow-md" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="absolute top-[65vh] left-[10%]"
+        >
+          <Star className="w-5 h-5 fill-white/55 text-white/55 rotate-35 drop-shadow-sm" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="absolute top-[70vh] right-[6%]"
+        >
+          <Star className="w-8 h-8 fill-moonstone-blue/45 text-moonstone-blue/45 -rotate-40 drop-shadow-lg" />
+        </motion.div>
+
+        {/* Lower Section Stars */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="absolute top-[120vh] left-[7%]"
+        >
+          <Star className="w-6 h-6 fill-white/60 text-white/60 rotate-25 drop-shadow-md" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="absolute top-[125vh] right-[10%]"
+        >
+          <Star className="w-7 h-7 fill-moonstone-blue/50 text-moonstone-blue/50 -rotate-20 drop-shadow-lg" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="absolute top-[140vh] left-[12%]"
+        >
+          <Star className="w-5 h-5 fill-white/50 text-white/50 rotate-50 drop-shadow-sm" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="absolute top-[145vh] right-[5%]"
+        >
+          <Star className="w-8 h-8 fill-moonstone-blue/55 text-moonstone-blue/55 -rotate-35 drop-shadow-lg" />
+        </motion.div>
+
+        {/* Bottom Section Stars */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute top-[180vh] left-[15%]"
+        >
+          <Star className="w-6 h-6 fill-white/60 text-white/60 rotate-15 drop-shadow-md" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="absolute top-[185vh] right-[18%]"
+        >
+          <Star className="w-7 h-7 fill-moonstone-blue/50 text-moonstone-blue/50 -rotate-25 drop-shadow-lg" />
+        </motion.div>
+      </div>
+
       {/* Centered Hero Title */}
       <section className="pt-32 pb-16 px-6 md:px-12">
         <motion.div
@@ -158,7 +301,7 @@ export function AboutPage() {
           </motion.div>
         </div>
 
-        {/* Certifications Section */}
+         {/* Certifications Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,14 +309,32 @@ export function AboutPage() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-32"
         >
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-8">Certifications</h2>
-          <div className="p-8 border border-border bg-background rounded-lg">
-            <div className="flex items-start gap-4">
-              <div className="flex-1">
-                <h3 className="text-xl font-light mb-2">Bloomberg Market Concepts (BMC)</h3>
-                <p className="text-sm font-light text-muted-foreground">
-                  Completed comprehensive certification covering economic indicators, currencies, fixed income, and equities
-                </p>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-8">Certifications & Awards</h2>
+          
+          <div className="space-y-6">
+            {/* Bloomberg Certification */}
+            <div className="p-8 border border-border bg-background rounded-lg">
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-light mb-2">Bloomberg Market Concepts (BMC)</h3>
+                  <p className="text-sm font-light text-muted-foreground">
+                    Completed comprehensive certification covering economic indicators, currencies, fixed income, and equities
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* BailLens Awards */}
+            <div className="p-8 border border-border bg-background rounded-lg">
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-light mb-2">BailLens Hackathon Awards</h3>
+                  <ul className="space-y-2 text-sm font-light text-muted-foreground">
+                    <li>• Best Use of Blockchain for Civic Impact (Allium)</li>
+                    <li>• Best Use of Solana</li>
+                    <li>• Best CourtHack</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -361,6 +361,41 @@ export function BailLensCaseStudy() {
           </p>
         </motion.section>
 
+        {/* Awards & Recognition */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-24 space-y-8"
+        >
+          <div className="py-12 px-8 -mx-6 md:-mx-12" style={{ backgroundColor: '#6FA9BB' }}>
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white">Awards & Recognition</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Best Use of Blockchain for Civic Impact</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Allium Award
+              </p>
+            </div>
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Best Use of Solana</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Recognized for innovative blockchain integration
+              </p>
+            </div>
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Best CourtHack</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Top project addressing justice system challenges
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+
         {/* Project Links */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}

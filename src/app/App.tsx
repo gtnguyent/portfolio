@@ -4,7 +4,6 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
-import { WorkPage } from "./pages/WorkPage";
 import { AboutPage } from "./pages/AboutPage";
 import { DabblePage } from "./pages/DabblePage";
 import { MatchAMatchaCaseStudy } from "./pages/MatchAMatchaCaseStudy";
@@ -22,7 +21,6 @@ export default function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/work" element={<WorkPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/dabble" element={<DabblePage />} />
               <Route path="/case-study/match-a-matcha" element={<MatchAMatchaCaseStudy />} />

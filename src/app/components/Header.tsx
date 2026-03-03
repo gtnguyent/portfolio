@@ -31,15 +31,15 @@ export function Header() {
           </Link>
           <div className="flex items-center gap-8">
             <nav className="flex gap-8">
-              <Link
-                to="/work"
+              <a
+                href="#featured-work"
                 className={`font-light tracking-tight relative group ${
-                  location.pathname === "/work" || location.pathname.includes("/case-study") ? "opacity-100" : "opacity-70"
+                  location.pathname === "/" || location.hash === "#featured-work" ? "opacity-100" : "opacity-70"
                 }`}
               >
                 <span className="relative z-10">Work</span>
                 <span className="absolute inset-0 bg-moonstone-blue opacity-0 group-hover:opacity-10 transition-opacity -m-2 rounded" />
-              </Link>
+              </a>
               <Link
                 to="/about"
                 className={`font-light tracking-tight relative group ${
