@@ -7,6 +7,18 @@
       <title>GT Nguyen - Portfolio</title>
 
       <script>
+  // Ensure theme class is present on first paint (default to dark if no saved preference)
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
+    } catch (e) {
+      // ignore
+    }
+  })();
+
   // Restore deep-link path after the 404.html redirect
   (function () {
     var params = new URLSearchParams(window.location.search);

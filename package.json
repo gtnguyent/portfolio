@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite"
+  "build": "vite build",
+  "postbuild": "cp -f dist/index.html dist/404.html",
+  "dev": "vite"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

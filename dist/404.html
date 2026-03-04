@@ -1,6 +1,41 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/" />
-  </head>
-</html>
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>GT Nguyen - Portfolio</title>
+
+      <script>
+  // Ensure theme class is present on first paint (default to dark if no saved preference)
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
+    } catch (e) {
+      // ignore
+    }
+  })();
+
+  // Restore deep-link path after the 404.html redirect
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var redirect = params.get("redirect");
+
+    if (redirect) {
+      // Remove the redirect query param and replace URL with the original path
+      window.history.replaceState(null, "", redirect);
+    }
+  })();
+</script>
+      <script type="module" crossorigin src="/assets/index-BRKV_zcD.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-tSK4oszK.css">
+    </head>
+
+    <body>
+      <div id="root"></div>
+    </body>
+  </html>
+  
