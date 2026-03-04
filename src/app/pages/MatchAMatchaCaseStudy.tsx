@@ -22,6 +22,11 @@ export function MatchAMatchaCaseStudy() {
   };
 
   const handleNavigation = (path: string) => {
+    if (path === "/work") {
+      navigate("/", { state: { targetId: "featured-work" } });
+      return;
+    }
+
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -113,7 +118,7 @@ export function MatchAMatchaCaseStudy() {
           </div>
         </motion.div>
 
-        {/* Hero Image/Video */}
+        {/* Hero Video */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,10 +126,15 @@ export function MatchAMatchaCaseStudy() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="w-full aspect-[16/9] bg-muted border border-border overflow-hidden mb-24 rounded-lg"
         >
-          <ImageWithFallback
-            src="/assets/matcha/matcha-landing.webp"
-            alt="Match-A-Matcha mockup"
+          <video
             className="w-full h-full object-cover"
+            src="/assets/matcha/MatchAMatcha-Demo-Video.mov"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            aria-label="Match-A-Matcha demo video"
           />
         </motion.div>
 

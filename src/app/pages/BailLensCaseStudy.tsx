@@ -7,6 +7,11 @@ export function BailLensCaseStudy() {
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
+    if (path === "/work") {
+      navigate("/", { state: { targetId: "featured-work" } });
+      return;
+    }
+
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -97,6 +102,61 @@ export function BailLensCaseStudy() {
             </a>
           </div>
         </motion.div>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-24 space-y-8"
+        >
+          <div className="py-12 px-8 -mx-6 md:-mx-12" style={{ backgroundColor: '#6FA9BB' }}>
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white">The Product</h2>
+          </div>
+
+          {/* Large mockup (YouTube demo) */}
+          <figure className="space-y-3">
+            <div className="w-full aspect-[16/9] bg-muted border border-border overflow-hidden rounded-lg">
+              <video
+                className="w-full h-full object-cover"
+                src="/assets/bailens/Bailens-Demo-Video.mov"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                aria-label="BailLens demo video"
+              />
+            </div>
+          </figure>
+
+          {/* Feature highlights grid */}
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Interactive Hover</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Neighborhood-level interactions reveal detailed bail data
+              </p>
+            </div>
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Median Bail Display</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Tooltips show precise median amounts per area
+              </p>
+            </div>
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Heatmap Scaling</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Color-coded visualization highlights disparities
+              </p>
+            </div>
+            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
+              <h3 className="text-lg font-light">Clean Civic UI</h3>
+              <p className="text-sm font-light text-muted-foreground">
+                Accessible, minimal interface for public use
+              </p>
+            </div>
+          </div>
+  </motion.section>
 
         {/* Hero Image/Video */}
         <motion.div
@@ -172,7 +232,7 @@ export function BailLensCaseStudy() {
             Cash bail systems disproportionately affect low-income communities, reinforcing cycles of incarceration and economic hardship. However, the data behind these disparities is often difficult to access or understand.
           </p>
 
-          <div className="w-full h-px bg-border my-8"></div>
+          {/* <div className="w-full h-px bg-border my-8"></div> */}
         </motion.section>
 
         {/* Research & Data */}
@@ -289,60 +349,20 @@ export function BailLensCaseStudy() {
           </div>
         </motion.section>
 
-        {/* Final Product */}
-        <motion.section
+        {/* Hero Image/Video */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-24 space-y-8"
+          className="w-full aspect-[16/9] bg-muted border border-border overflow-hidden mb-24 rounded-lg"
         >
-          <div className="py-12 px-8 -mx-6 md:-mx-12" style={{ backgroundColor: '#6FA9BB' }}>
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white">The Product</h2>
-          </div>
-
-          {/* Large mockup (YouTube demo) */}
-          <figure className="space-y-3">
-            <div className="w-full aspect-[16/9] bg-muted border border-border overflow-hidden rounded-lg">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/kyHoALkD8zM?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=kyHoALkD8zM"
-                title="BailLens interactive platform demo"
-                frameBorder="0"
-                allow="autoplay; encrypted-media; fullscreen"
-                allowFullScreen
-              />
-            </div>
-          </figure>
-
-          {/* Feature highlights grid */}
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
-              <h3 className="text-lg font-light">Interactive Hover</h3>
-              <p className="text-sm font-light text-muted-foreground">
-                Neighborhood-level interactions reveal detailed bail data
-              </p>
-            </div>
-            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
-              <h3 className="text-lg font-light">Median Bail Display</h3>
-              <p className="text-sm font-light text-muted-foreground">
-                Tooltips show precise median amounts per area
-              </p>
-            </div>
-            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
-              <h3 className="text-lg font-light">Heatmap Scaling</h3>
-              <p className="text-sm font-light text-muted-foreground">
-                Color-coded visualization highlights disparities
-              </p>
-            </div>
-            <div className="p-6 border border-border bg-background rounded-lg space-y-3">
-              <h3 className="text-lg font-light">Clean Civic UI</h3>
-              <p className="text-sm font-light text-muted-foreground">
-                Accessible, minimal interface for public use
-              </p>
-            </div>
-          </div>
-        </motion.section>
+          <ImageWithFallback
+            src="/assets/bailens/bailens_landing.png"
+            alt="BailLens interactive platform"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
 
         {/* Impact */}
         <motion.section
@@ -359,6 +379,48 @@ export function BailLensCaseStudy() {
           <p className="text-lg font-light text-muted-foreground leading-relaxed max-w-3xl">
             BailLens demonstrates how design and data visualization can empower communities with transparency. By translating raw court data into a clear visual narrative, we aimed to spark conversations about equity in the justice system.
           </p>
+        </motion.section>
+
+        {/* Reflection & Iterations */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-24 space-y-8"
+        >
+          <div className="py-12 px-8 -mx-6 md:-mx-12" style={{ backgroundColor: '#406768' }}>
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white">Reflection & Iterations</h2>
+          </div>
+
+          <div className="space-y-8 max-w-3xl">
+            <p className="text-lg font-light text-muted-foreground leading-relaxed">
+              Working on BailLens reinforced the importance of clear, community-focused data presentation. Translating dense court records into approachable visualizations taught me how crucial iterative simplification is for public-facing civic tools.
+            </p>
+
+            <p className="text-lg font-light text-muted-foreground leading-relaxed">
+              On the technical side, building performant map interactions and thoughtful tooltip states improved my ability to balance interactivity with accessibility and performance.
+            </p>
+
+            <div className="max-w-3xl space-y-4">
+              <h3 className="text-xl font-light">Future Iterations</h3>
+              <ul className="space-y-3 font-light text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-foreground">→</span>
+                  <span>Improve map performance for large datasets with tile-based rendering</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-foreground">→</span>
+                  <span>Add keyboard and screen-reader optimized controls for map exploration</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-foreground">→</span>
+                  <span>Integrate community feedback channels to prioritize feature development</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </motion.section>
 
         {/* Awards & Recognition */}
@@ -394,8 +456,7 @@ export function BailLensCaseStudy() {
             </div>
           </div>
         </motion.section>
-
-
+    
         {/* Project Links */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -433,7 +494,51 @@ export function BailLensCaseStudy() {
               <ExternalLink className="w-4 h-4" />
             </motion.a>
           </div>
+
+          <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 text-sm font-light tracking-tight hover:opacity-60 transition-opacity"
+            >
+              ↑ back to top
+            </a>
         </motion.section>
+
+        
+
+        {/* Project Navigation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-between items-center pt-16 border-t border-border"
+        >
+          <button
+            onClick={() => handleNavigation("/work")}
+            className="text-sm font-light tracking-tight hover:opacity-60 transition-opacity"
+          >
+            ← Back to Work
+          </button>
+          <div className="flex gap-8">
+            <button
+              onClick={() => handleNavigation("/case-study/truss-bridge")}
+              className="text-sm font-light tracking-tight hover:opacity-60 transition-opacity"
+            >
+              ← Previous
+            </button>
+            <button
+              onClick={() => handleNavigation("/case-study/match-a-matcha")}
+              className="text-sm font-light tracking-tight hover:opacity-60 transition-opacity"
+            >
+              Next →
+            </button>
+          </div>
+        </motion.div>
+
       </div>
     </div>
   );

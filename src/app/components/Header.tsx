@@ -1,10 +1,30 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleWorkClick = (e: any) => {
+    e.preventDefault();
+    // If already on home, smooth-scroll to the featured section.
+    if (location.pathname === "/") {
+      const el = document.getElementById("featured-work");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      // fallback: set the hash
+      window.location.hash = "#featured-work";
+      return;
+    }
+
+    // If on another page, navigate to home and attach a small state flag
+    // so the Home page can perform the smooth scroll after mount.
+    navigate("/", { state: { targetId: "featured-work" } });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +53,7 @@ export function Header() {
             <nav className="flex gap-8">
               <a
                 href="#featured-work"
+                onClick={handleWorkClick}
                 className={`font-light tracking-tight relative group ${
                   location.pathname === "/" || location.hash === "#featured-work" ? "opacity-100" : "opacity-70"
                 }`}

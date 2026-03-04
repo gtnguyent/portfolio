@@ -6,6 +6,11 @@ export function NintendoCaseStudy() {
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
+    if (path === "/work") {
+      navigate("/", { state: { targetId: "featured-work" } });
+      return;
+    }
+
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

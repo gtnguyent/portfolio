@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, FileText, Star } from "lucide-react";
+import { Mail, Linkedin, FileText, Star, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function AboutPage() {
@@ -320,6 +320,15 @@ export function AboutPage() {
                   <p className="text-sm font-light text-muted-foreground">
                     Completed comprehensive certification covering economic indicators, currencies, fixed income, and equities
                   </p>
+                  <a
+                    href="https://portal.bloombergforeducation.com/certificates/rFvuQh8aUK1gsyQFXSP3ds8b"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 mt-3 text-sm font-light text-mustard-green hover:opacity-90"
+                  >
+                    View certificate
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -328,15 +337,47 @@ export function AboutPage() {
             <div className="p-8 border border-border bg-background rounded-lg">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <h3 className="text-xl font-light mb-2">BailLens Hackathon Awards</h3>
+                  <h3 className="text-xl font-light mb-2">CivicHacks Hackathon Awards</h3>
                   <ul className="space-y-2 text-sm font-light text-muted-foreground">
                     <li>• Best Use of Blockchain for Civic Impact (Allium)</li>
                     <li>• Best Use of Solana</li>
                     <li>• Best CourtHack</li>
                   </ul>
+                  <a
+                    href="https://devpost.com/software/baillens"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 mt-3 text-sm font-light text-mustard-green hover:opacity-90"
+                  >
+                    View Devpost
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>
+            
+              {/* Dean's List */}
+              <div className="p-8 border border-border bg-background rounded-lg">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2">Dean’s List</h3>
+                    <p className="text-sm font-light text-muted-foreground">Recognized for academic excellence</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* BU AdLab */}
+              <div className="p-8 border border-border bg-background rounded-lg">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2">BU AdLab</h3>
+                    <ul className="space-y-2 text-sm font-light text-muted-foreground">
+                      <li>• Nomination for Best Overall (GrandLabbie)</li>
+                      <li>• Nomination for Best Team Building</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
           </div>
         </motion.div>
 

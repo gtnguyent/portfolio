@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Star } from "lucide-react";
 
@@ -9,7 +10,7 @@ export function HomePage() {
       title: "BailLens — Visualizing Bail Inequities in Boston",
       impact: "Data visualization platform exposing bail disparities across Boston neighborhoods",
       tags: ["UI/UX", "Front-End", "Civic Tech"],
-      image: "/assets/bailens/bailens_landing.png",
+      image: "/assets/bailens/bailens-mockup.png",
       link: "/case-study/baillens",
       bgColorClass: "bg-gradient-to-br from-moonstone-blue via-moonstone-blue/70 to-moonstone-blue/40",
     },
@@ -17,7 +18,7 @@ export function HomePage() {
       title: "Match-A-Matcha",
       impact: "Quiz-based recommendation system helping users discover personalized matcha experiences",
       tags: ["UI/UX", "Front-End", "Research"],
-      image: "/assets/matcha/matcha-landing.webp",
+      image: "/assets/matcha/matcha-mac-phone-landing.png",
       link: "/case-study/match-a-matcha",
       bgColorClass: "bg-gradient-to-br from-deep-space-sparkle via-deep-space-sparkle/70 to-deep-space-sparkle/40",
     },
@@ -33,7 +34,7 @@ export function HomePage() {
       title: "Acrylic Truss Bridge",
       impact: "Engineering visualization tool for understanding load distribution and structural integrity",
       tags: ["Research", "Data", "Engineering"],
-      image: "/assets/truss/truss-process-optimal.png",
+      image: "/assets/truss/truss-phone-mockups.png",
       link: "/case-study/truss-bridge",
       bgColorClass: "bg-gradient-to-br from-mustard-green via-mustard-green/70 to-mustard-green/40",
     },
@@ -45,6 +46,25 @@ export function HomePage() {
       featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  // Scroll to featured-work if navigated here with state or hash
+  const location = useLocation();
+
+  useEffect(() => {
+    // If navigation passed a state with targetId, scroll after mount
+    // @ts-ignore -- location.state may be any
+    const targetId = location?.state?.targetId as string | undefined;
+    if (targetId === 'featured-work') {
+      // small timeout to allow page layout to settle
+      setTimeout(() => scrollToFeaturedWork(), 120);
+      return;
+    }
+
+    // If the URL has the hash already, scroll
+    if (location.hash === '#featured-work') {
+      setTimeout(() => scrollToFeaturedWork(), 120);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -321,8 +341,7 @@ export function HomePage() {
             {/* Description */}
             <div className="text-center max-w-2xl mx-auto">
               <p className="text-base md:text-lg font-light leading-relaxed">
-                Media Science student at Boston University designing thoughtful digital 
-                experiences through research, systems thinking, and technical craft.
+                BU undergrad exploring full-time opportunities in UX design, web development, marketing and research.
               </p>
             </div>
 

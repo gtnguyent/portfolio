@@ -22,6 +22,11 @@ export function TrussBridgeCaseStudy() {
   };
 
   const handleNavigation = (path: string) => {
+    if (path === "/work") {
+      navigate("/", { state: { targetId: "featured-work" } });
+      return;
+    }
+
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -559,7 +564,7 @@ export function TrussBridgeCaseStudy() {
               ← Previous
             </button>
             <button
-              onClick={() => handleNavigation("/case-study/match-a-matcha")}
+              onClick={() => handleNavigation("/case-study/baillens")}
               className="text-sm font-light tracking-tight hover:opacity-60 transition-opacity"
             >
               Next →
