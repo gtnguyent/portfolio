@@ -1,6 +1,15 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Preserve the full path and redirect to the root with a query param
+      var l = window.location;
+      var redirect = l.pathname + l.search + l.hash;
+      l.replace("/?redirect=" + encodeURIComponent(redirect));
+    </script>
   </head>
+  <body></body>
 </html>
